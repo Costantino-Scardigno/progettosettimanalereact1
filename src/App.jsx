@@ -16,6 +16,8 @@ function App() {
         <Carousel titleSaga="Marvel Saga" search="marvel" />
         <Carousel titleSaga="Transformers Saga" search="Transformers" />
         <Carousel titleSaga="Fast&Furious Saga" search="Fast&Furious" />
+        <Carousel titleSaga="SpiderMan" search="amzingSpiderman" />{" "}
+        {/* Ti mostrerà il messaggio di errore visto che non troverà nulla che corrisponde ad "amzingSpiderman" */}
         <Footer />
       </Container>
     </>

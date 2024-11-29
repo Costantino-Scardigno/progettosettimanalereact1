@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <div className="container mt-5">
-        <div className="col-lg-12">
+        <div className="col-lg-12 mb-3">
           <FaFacebookSquare className="iconFooter" />
           <FaInstagram className="iconFooter" />
           <FaTwitter className="iconFooter" />

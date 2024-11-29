@@ -1,0 +1,47 @@
+.logo {
+  width: 100px;
+}
+
+.iconsnav {
+  font-size: 20px;
+}
+
+.iconAction {
+  font-size: 25px;
+}
+
+.netflix-carousel {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.netflix-carousel .card {
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.netflix-carousel img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.netflix-carousel img:hover {
+  border: 1px solid white;
+  border-radius: 20px;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: white;
+  font-size: 90px;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1;
+}
+
+.iconFooter {
+  font-size: 40px;
+  margin-inline: 10px;
+}

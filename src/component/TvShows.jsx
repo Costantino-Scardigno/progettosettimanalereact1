@@ -9,10 +9,6 @@ const TvShows = (search, title) => {
   const [Tvshows, setTvshows] = useState([]);
   const navigate = useNavigate();
 
-  const goToAnimePage = () => {
-    navigate("/anime");
-  };
-
   useEffect(() => {
     const searchParameter = search.search;
     const URL = `http://www.omdbapi.com/?apikey=137cb045&s=${searchParameter}`;
@@ -33,9 +29,9 @@ const TvShows = (search, title) => {
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
   const { titleSaga } = title;
-
+  console.log(Tvshows);
   const settings = {
     dots: false,
     infinite: true,
@@ -79,9 +75,12 @@ const TvShows = (search, title) => {
       <h4>{titleSaga}</h4>
       <Slider {...settings}>
         {Tvshows.map((movie) => (
-          <div key={movie.imdbID} className="p-2">
-            <img onClick={goToAnimePage} src={movie.Poster} alt={movie.Title} />
-            <Link to={`/Anime/${movie.imdbID}`}>ep 1</Link>
+          <div
+            onClick={() => navigate(`/Anime/${movie.imdbID}`)}
+            key={movie.imdbID}
+            className="p-2"
+          >
+            <img src={movie.Poster} alt={movie.Title} />
           </div>
         ))}
       </Slider>

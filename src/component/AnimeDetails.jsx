@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Card } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 
 const AnimeDetails = () => {
   const { id } = useParams();
-  const [Details, setDetails] = useState(null);
+  const [Details, setDetails] = useState([]);
+  console.log("ID:", id);
 
-  useEffect(() => {
+  const FetchDetails = () => {
     fetch(`http://www.omdbapi.com/?apikey=137cb045&i=${id}`)
       .then((resp) => {
         if (resp.ok) {
@@ -17,23 +18,39 @@ const AnimeDetails = () => {
       })
       .then((data) => {
         if (data) {
-          console.log(Details);
           setDetails(data);
         }
       })
       .catch((err) => {
         console.log(err);
       });
-  });
+  };
+  useEffect(() => {
+    FetchDetails();
+  }, []);
+  console.log(Details);
   return (
-    <Card>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>{Details.Title}</Card.Title>
-        <Card.Text>{Details.Plot}</Card.Text>
-        <Card.Text>{Details.Genre}</Card.Text>
-      </Card.Body>
-    </Card>
+    <Container fluid>
+      <Row>
+        <Col className="col-6 col-xl-4 text-center">
+          <img className="" src={Details.Poster} />
+        </Col>
+        <Col>
+          <Card className="h-100">
+            <Card.Body className="">
+              <Card.Title>{Details.Title}</Card.Title>
+              <Card.Text>{Details.Plot}</Card.Text>
+              <Card.Title>Writer: {Details.Writer}</Card.Title>
+              <Card.Title>Actor: {Details.Actors}</Card.Title>
+              <Card.Title>Genre: {Details.Genre}</Card.Title>
+              <Card.Title>Language: {Details.Language}</Card.Title>
+
+              <Card.Text>RELEASED: {Details.Released}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 export default AnimeDetails;

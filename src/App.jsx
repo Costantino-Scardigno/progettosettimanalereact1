@@ -36,7 +36,16 @@ function App() {
               }
             />
 
-            <Route path="/Anime" element={<TvShows search="naruto" />} />
+            <Route
+              path="/Anime"
+              element={
+                <>
+                  <ActionBanner />
+                  <TvShows search="naruto" /> <TvShows search="pokemon" />
+                  <TvShows search="dragonball" />
+                </>
+              }
+            />
             <Route path="/Anime/:id" element={<AnimeDetails />} />
           </Routes>
 

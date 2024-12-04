@@ -12,11 +12,16 @@ const MyNavbar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto ">
-            <Nav.Link className="text-white" href="#features">
+            <Nav.Link as={Link} to="/" className="text-white" href="#features">
               Home
             </Nav.Link>
-            <Nav.Link className="text-secondary" href="#pricing">
-              TV Show
+            <Nav.Link
+              as={Link}
+              to="/Anime"
+              className="text-secondary"
+              href="#pricing"
+            >
+              Anime
             </Nav.Link>
             <Nav.Link className="text-secondary" href="#features">
               Movies
@@ -27,8 +32,6 @@ const MyNavbar = () => {
             <Nav.Link className="text-secondary" href="#features">
               My List
             </Nav.Link>
-            <Link to="/Anime">Anime</Link>
-            <Link to="/">Home</Link>
           </Nav>
           <Nav>
             <Nav.Link className="text-white" href="#deets">

@@ -2,6 +2,7 @@ import { CiGrid41 } from "react-icons/ci";
 import { IoMdGrid } from "react-icons/io";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import { Link } from "react-router-dom";
 const ActionBanner = () => {
   return (
     <div className="d-flex justify-content-between">
@@ -24,8 +25,10 @@ const ActionBanner = () => {
                 </Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Commedy</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">Drama</Dropdown.Item>
-
                 <Dropdown.Item href="#/action-4">Thirller</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/Anime">
+                  Anime
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>

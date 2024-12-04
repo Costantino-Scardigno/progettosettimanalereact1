@@ -3,6 +3,7 @@ import LogoNetflix from "../assets/logo.png";
 import { FaSearch } from "react-icons/fa";
 import { FaRegBell } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const MyNavbar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-dark ">
@@ -26,6 +27,8 @@ const MyNavbar = () => {
             <Nav.Link className="text-secondary" href="#features">
               My List
             </Nav.Link>
+            <Link to="/Anime">Anime</Link>
+            <Link to="/">Home</Link>
           </Nav>
           <Nav>
             <Nav.Link className="text-white" href="#deets">
